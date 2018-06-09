@@ -1,5 +1,4 @@
-#r "../packages/System.Buffers/lib/netstandard2.0/System.Buffers.dll"
-#load "ValueHolder.fsx"
+module Parser
 
 open System.Text
 open System.Buffers
@@ -39,8 +38,3 @@ let viaStreamReader(file: string) =
                 parseSection (mm.[4] + 1uy, mm.[5], line) |> Double.Parse
             ) |> ignore
             pool.Return(tempBuffer, true)
-
-
-#time
-viaStreamReader "release/example-input.txt"
-#time

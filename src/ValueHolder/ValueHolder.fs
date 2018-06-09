@@ -1,3 +1,5 @@
+namespace ValueHolder
+
 open System
 
 type ValueHolder = {
